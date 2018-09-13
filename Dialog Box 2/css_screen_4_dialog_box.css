@@ -1,0 +1,26 @@
+.epostage_dialog_box img {
+  width: 99.96%;
+}
+
+.hide_visibility {
+  display: none;
+}
+
+.header_dialog_box {
+  height: 20.8px;
+}
+
+.printer_container_dialog img {
+  height: 336px;
+}
+
+.question_container > img {
+  height: 502px;
+}
+
+.question_container > img,
+.printer_container_dialog img, 
+.header_dialog_box,
+.printer_container_dialog {
+  width: 100%;
+}

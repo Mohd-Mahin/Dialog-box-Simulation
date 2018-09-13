@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Macros</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css_screen_5.css"/>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="css_screen_5_dialog_box.js"></script>
+    </head>
+    <body>
+        <form role="form" id="macros_form">
+            <div class="outer_container" id="outer_container">
+                <div class="header_of_container width_full">
+                    <div class="header_text float_left">Macros</div>
+                    <div class="question_mark float_left" id="question_mark"></div>
+                    <div class="close" id="close"></div> 
+                </div>
+                <!-- End of header Section-->
+                <div class="inner_container">
+                    <div class="macro_text clear_both width_full float_left font_eleven">
+                        <label for="macro_selection" accesskey="m" class="float_left"><u>M</u>acro name:</label>
+                    </div>
+                    <!-- Inner left section and right section-->
+                    <div class="inner_left_and_right clear_both width_full">
+                        <div class="inner_left clear_both float_left font_eleven">
+                            <div class="macro_input_text">
+                                <input type="text" name="macro_input_text" id="macro_input_text" onkeyup="checkSelectValue();">
+                            </div>
+                            <div class="macro_container">
+                                <select multiple="multiple" size="9" id="macro_selection" name="macro_selection" class="select_modify font_eleven" autofocus="autofocus">
+                                    <option value="1" class="option_element" selected="selected">Macro1</option>
+                                </select>
+                                <select multiple="multiple" size="9" id="word_command" name="word_command" class="select_modify font_eleven hide_style">
+                                    <option value="1" class="option_element" selected="selected">AcceptAllChangesInDoc</option>
+                                    <option value="2" class="option_element">AcceptAllChangesShown</option>
+                                    <option value="3" class="option_element">AcceptChangesAndAdvance</option>
+                                    <option value="4" class="option_element">AcceptChangesOrAdvance</option>
+                                    <option value="5" class="option_element">AcceptChangesSelected</option>
+                                    <option value="6" class="option_element">ActivateObject</option>
+                                    <option value="7" class="option_element">AddDigitalSignature</option>
+                                    <option value="8" class="option_element">AddToContacts</option>
+                                    <option value="9" class="option_element">AdjustListIndents</option>
+                                    <option value="10" class="option_element">AdvancedBrightnessContrast</option>
+                                    <option value="11" class="option_element">AdvertisePublishAs</option>
+                                    <option value="12" class="option_element">AlignBottom</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="inner_right">
+                            <div class="run_button">
+                                <button type="button" id="button_run" class="button_color width_full" name="button_run" accesskey="r"><u>R</u>un</button>
+                            </div>
+                            <div class="step_into_button">
+                                <button type="button" id="button_step_into" name="button_step_into" class="margin_four button_color width_full" accesskey="s"><u>S</u>tep Into</button>
+                            </div>
+                            <div class="edit_button">
+                                <button type="button" id="button_edit" name="button_edit" class="margin_four button_color width_full" accesskey="e"><u>E</u>dit</button>
+                            </div>
+                            <div class="create_button">
+                                <button type="button" id="button_create" name="button_create" class="margin_four button_color width_full" accesskey="c"><u>C</u>reate</button>
+                            </div>
+                            <div class="delete_button">
+                                <button type="button" id="button_delete" name="button_delete" class="margin_four button_color width_full" accesskey="d"><u>D</u>elete</button>
+                            </div>
+                            <div class="organizer_button">
+                                <button type="button" id="button_organizer" name="button_organizer" class="margin_four button_color width_full" accesskey="g">Or<u>g</u>anizer...</button>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="macro_selection_no_multiple clear_both float_left font_eleven">
+                        <label for="macro_in_select" accesskey="a">M<u>a</u>cros in:</label>
+                        <select id="macro_in_select" name="macro_in_select" class="macro_in_class">
+                            <option value="1" selected="selected" class="active">All active templates and documents</option>
+                            <option value="2">Normal.dotm(global Template)</option>
+                            <option value="3">Word Commands</option>
+                            <option value="4">Document1(Document)</option>
+                        </select>
+                    </div>
+                    <div class="text_area_label width_full float_left">
+                        <label for="description_textarea" accesskey="i">
+                        Descr<u>i</u>ption:</label>
+                    </div>
+                    <div class="text_area clear_both">
+                        <textarea rows="4" cols="4" id="description_textarea" name="description_textarea" class="width_full font_eleven text_area_style"></textarea>
+                    </div>
+                    <div class="footer_button width_full float_left">
+                        <button type="button" name="cancel_button" id="cancel_button" class="height_twenty_two button_color button_font">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="organizer_container_dialog hide_style" id="organizer_container_dialog" title="Organizer">
+                <img src="img/organizer_dialog_image.jpg" alt="organizer_dialog_image.png"/>
+            </div>
+            <div class="microsoft_office_word_dialog_box hide_style" id="microsoft_office_word_dialog_box" title="Microsoft Office Word">
+                <img src="img/microsoft_office_word_dialog_box.jpg" alt="microsoft_office_word_dialog_box.png"/>
+            </div>
+            <div class="delete_container_dialog hide_style" id="delete_container_dialog" title="Microsoft Office Word">
+                <img src="img/delete_dialog_box.jpg" alt="delete_dialog_box.png"/>
+            </div>            
+            <div class="question_container hide_style" id="question_container" title="Word Help">
+                <img src="img/question_mark.jpg" alt="question_mark.jpg"/>
+            </div>
+        </form>
+    </body>
+</html>

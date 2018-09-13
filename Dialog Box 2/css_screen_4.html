@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Envelopes and Labels</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css_screen_4.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="css_screen4_dialog.js"></script>
+        <link rel="stylesheet" href="css_screen_4_dialog_box.css"/>
+    </head>
+    <body>
+        <div class="main_container" id="main_container">
+            <div class="container_header clear_both full_width">
+                <div class="header_heading float_left"><strong>Envelopes and Labels</strong></div>
+                <a href="#">
+                    <div class="header_question_mark float_left" id="header_question_mark"></div>
+                </a>
+                <a href="#">
+                    <div class="header_cross float_right" id="header_close"></div>
+                </a>
+            </div>
+            <!-- Navigation tab Ends -->
+            <form role="form" id="envelopes_form" name="envelopes_form">
+                <!-- Sub Container holding functional areas-->
+                <div class="sub_container clear_both full_width float_left">
+                    <nav class="navigation_bar">
+                        <ul>
+                            <li class="list_items position_relative" accesskey="e" id="envelope_list"><u>E</u>nvelopes</li>
+                            <li class="active list_items position_relative" accesskey="l" id="label_list"><u>L</u>abels</li>
+                        </ul>
+                    </nav>
+                    <!-- container of functional area inside div-->  
+                    <div class="functional_sub_conatiner float_left position_relative">
+                        <div class="hidden_label_iamge" id="hidden_label_iamge">
+                            <img src="img/label_image.png" alt="label_image.png"/>
+                        </div>
+                        <div class="envelope_container" id="envelope_container">      
+                        <div class="wrapping_address_container height_twenty full_width">
+                            <div class="text_address height_twenty font_size_eleven float_left">
+                                <label for="address_text_area" accesskey="a"><u>A</u>ddress:</label> 
+                            </div>
+                            <div class="text_book_img height_twenty float_left">
+                                <img src="img/book.png" alt="book.png"/>
+                                <span class="icon_down float_right">&#129171;</span>
+                            </div>
+                            <div class="text_book_check height_twenty float_left">
+                                <input type="checkbox" name="return_address_checkbox" id="return_address_checkbox" value="return_address" accesskey="r"/>
+                                <label for="return_address_checkbox">Use <u>r</u>eturn address</label>    
+                            </div>
+                        </div>
+                        <div class="text_area">
+                            <textarea class="address_text_area full_width height_full txt_area_style" cols="10" rows="3" id="address_text_area" name="address_text_area"></textarea>
+                        </div>
+                        <!-- Outer div for print and label -->
+                        <div class="fieldset_container clear_both full_width">
+                            <fieldset class="font_size_eleven float_left field_set_style">
+                                <legend>Print</legend>
+                                <div class="legen_radio_left">
+                                    <input type="radio" id="full_page_radio" name="fieldset_left_radio" accesskey="f" checked="checked" value="full_page_label" onclick="opacity_toggle()"/>
+                                    <label class="left_margin" for="full_page_radio"><u>F</u>ull page of the same label</label>        
+                                </div>
+                                <div class="legend_radio_left_lower">
+                                    <input type="radio" id="single_label_radio" name="fieldset_left_radio" accesskey="n" value="single_label" onclick="opacity_toggle()"/>
+                                    <label class="left_margin" for="single_label_radio">Si<u>n</u>gle label</label>
+                                </div>
+                                <!-- main div of row and col-->
+                                <div class="fieldset_section_left common_fieldset full_width" id="no_opacity">
+                                    <div class="row_and_column_number float_left height_twenty" id="opacity_zero">
+                                        <span class="legend_text">
+                                            <label for="select_row_number">Row:</label>
+                                        </span>
+                                        <span>
+                                            <input type="number" name="select_row_number" id="select_row_number" class=" height_twenty float_right" max="40" min="0" value="1" disabled="disabled" step="1"/>
+                                        </span>
+                                    </div>    
+                                    <div class="row_and_column_right float_left height_twenty" id="row_and_column_right">
+                                        <span class="legend_text">
+                                            <label for="select_column_number">Column:</label>
+                                        </span>
+                                        <span>
+                                            <input type="number" name="select_column_number" id="select_column_number" class="height_twenty float_right" max="40" min="0" value="1" disabled="disabled" step="1"/>
+                                        </span>
+                                    </div>
+                                </div>         
+                            </fieldset>
+                            <!-- field set second -->
+                            <fieldset class="fieldset_second_right font_size_eleven float_left field_set_style">
+                                <legend>Label</legend>
+                                <div class="fieldset_right">Microsoft, 1/2 Letter</div>
+                                <div>1/2 Letter Postcard</div>
+                                <div class="fieldset_image">
+                                    <img src="img/field_set_card.png" alt="field_set_card.png"/>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!-- End of fieldset -->
+                        <div class="lower_text float_left clear_both full_width font_size_eleven">Before printing, insert labels in 
+                        your printer's manual feeder.</div>
+                        <!-- Button inside the functional sub conatiner-->
+                        <div class="button_footer full_width float_left">
+                            <div class="button_print height_twenty_two float_left">
+                                <button type="button" id="print_button" name="print_button" class="blue_border font_size_eleven button_color height_full" accesskey="p"><u>P</u>rint</button> 
+                            </div>
+                            <div class="button_document height_twenty_two float_left">
+                                <button type="button" id="new_doc_button" name="new_doc_button" class="blue_border font_size_eleven button_color height_full" accesskey="d">New <u>D</u>ocument</button> 
+                            </div>
+                            <div class="button_option height_twenty_two float_left">
+                                <button type="button" id="option_button" name="option_button" class="blue_border font_size_eleven button_color height_full" accesskey="o"><u>O</u>ptions...</button> 
+                            </div>
+                            <div class="button_postage height_twenty_two float_left">
+                                <button type="button" id="postage_button" class="full_width blue_border font_size_eleven button_color height_full" name="postage_button" accesskey="t">E-pos<u>t</u>age Proerties...</button> 
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!--Last only button cancel-->
+                    <div class="footer_button_close full_width float_left">
+                        <button type="button" id="button_cancel" name="button_cancel" class="height_twenty_two blue_border button_color float_right">Cancel</button>
+                    </div>
+                </div>                
+            </form>
+        </div>
+        <div class="printer_container_dialog hide_visibility" id="printer_information_container" title="Save Print Output As">
+            <img src="img/print_dialog_box.jpg" alt="printer_information_dialog_box.jpg"/>
+        </div>
+        <div class="epostage_dialog_box hide_visibility" id="epostage_dialog_box" title="Microsoft Office word">
+            <img src="img/e_postage_properties_dialog_box.jpg" alt="e_postage_properties_dialog_box.png"/>
+        </div>
+        <div class="question_container hide_visibility" id="question_container" title="Word Help">
+            <img src="img/need_help.jpg" alt="need_help.jpg"/>
+        </div>
+        <div class="option_dialog_box hide_visibility" id="option_dialog_box" title="Label Options">
+            <img src="img/option_dialog_box.jpg" alt="option_dialog_box.jpg"/>                
+        </div>
+    </body>
+</html> 

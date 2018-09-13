@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Label Option</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css_screen_6.css"/>
+        <link rel="stylesheet" href="css_screen_6_dialog_box.css"/>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="css_screen_6_dialog_box.js"></script>    
+    </head>
+    <body>
+        <div class="outer_container" id="outer_container">
+            <div class="top_header full_width float_left">
+                <div class="header_label float_left">Label Options</div>
+                <div class="question_mark float_left" id="question_mark"></div>
+                <div class="close float_right" id="close"></div>    
+            </div>    
+            <!-- End of header-->
+            <form role="form" id="label_option_form">
+                <div class="printer_information float_left font_eleven full_width">Printer Information<hr/></div>
+                <div class="functional_container">
+                    <div class="only_radio full_width float_left">            
+                        <input type="radio" name="radio_printer" id="continuous_feed" onclick="change_opacity()" value="continous_feed_printer" accesskey="c"/>
+                        <label for="continuous_feed"><u>C</u>ontinuous-feed printers</label>                  
+                    </div>
+                    <div class="radio_and_select full_width float_left">
+                        <div class="radio_and_select_left float_left">
+                            <input type="radio" name="radio_printer" id="page_radio" onclick="change_opacity()" value="page_printers" checked="checked" accesskey="a"/>
+                            <label for="page_radio">P<u>a</u>ge printers</label>          
+                        </div>
+                        <div class="radio_and_select_right float_left">
+                            <label for="radio_and_select_right_select" accesskey="t">
+                                <u>T</u>ray:
+                            </label>
+                            <select id="radio_and_select_right_select" name="radio_and_select_right_select" class="font_eleven height_twentytwo dropdown_button common_select_style">
+                                <option value="1">Default tray (Default tray)</option>
+                            </select>
+                        </div>
+                    </div>
+                        <!-- End of radio and select container-->
+                    <div class="label_information font_eleven float_left full_width">Label information <hr/></div>
+                    <div class="label_vendors font_eleven full_width float_left">
+                        <label for="label_vendor_select_microsoft" accesskey="v">Label <u>v</u>endors:</label>
+                        <select id="label_vendor_select_microsoft" name="label_vendor_select_microsoft" onchange="changeMicroSoftOptionContent()" class="height_twentytwo dropdown_button common_select_style">
+                            <option value="1" selected="selected" id="option_microsoft">Microsoft</option>
+                            <option value="2" id="option_ace_label">Ace Label</option>
+                        </select>
+                        <select id="label_vendor_select" name="label_vendor_select" onchange="changeOptionContent()" class="height_twentytwo dropdown_button label_vendor_select_continuous_feed common_select_style">
+                            <option value="1" selected="selected" id="option_avery_a4">Avery A4/A5</option>
+                            <option value="2" id="option_avery_us_letter">Avery US Letter</option>
+                        </select>
+                    </div>
+                        <!--  End of Label Information -->
+                    <div class="product_label full_width float_left">
+                        <div class="wrapper float_left">
+                            <div class="product_number_label font_eleven float_left">
+                                <label for="product_number_select" accesskey="u">Product n<u>u</u>mber</label>
+                            </div>
+                            <div class="product_number_select float_left">
+                                <select id="product_number_select" name="product_number_select" autofocus="autofocus" multiple="multiple" size="6" class="product_number_select common_select_style" onchange="changeText(this)">
+                                    <option value="1" selected="selected">1/2 Letter</option>
+                                    <option value="2">1/2 Letter</option>
+                                    <option value="3">1/4 Letter</option>
+                                    <option value="4">1/4 Letter</option>
+                                    <option value="5">30 Per Page</option>
+                                    <option value="6">30 Per Page</option>
+                                </select>
+                                <select name="custom_select_option" id="custom_select_option" multiple="multiple" size="6" class="product_number_select common_select_style custom_select_option" onchange="changeText(this)"></select>
+                                <select id="product_number_select_page_printer" name="product_number_select_page_printer" multiple="multiple" size="6" class="product_number_select_page_printer common_select_style" onchange="changeText(this)">
+                                    <option value="1" selected="selected">3300</option>
+                                    <option value="2">3304</option>
+                                    <option value="3">3305</option>
+                                    <option value="4">3306</option>
+                                    <option value="5">3307</option>
+                                    <option value="6">3308</option>
+                                </select>
+                                <select id="product_number_select_acelabel" name="product_number_select_acelabel" multiple="multiple" size="6" class="product_number_select_page_printer common_select_style" onchange="changeText(this)" onclick="changeText(this)">
+                                    <option value="1" selected="selected">160 Series</option>
+                                    <option value="2">177 Series</option>
+                                    <option value="3">187 Series</option>
+                                    <option value="4">200 Series</option>
+                                    <option value="5">201 Series</option>
+                                    <option value="6">202 Series</option>
+                                </select>
+                                <select id="product_number_select_avery_us_letter" name="product_number_select_avery_us_letter" multiple="multiple" size="6" class="product_number_select_page_printer common_select_style" onchange="changeText(this)">
+                                    <option value="1" selected="selected">4013</option>
+                                    <option value="2">4014</option>
+                                    <option value="3">4015</option>
+                                    <option value="4">4018</option>
+                                    <option value="5">4019</option>
+                                    <option value="6">4020</option>
+                                </select>
+                            </div>
+                        </div>
+                        <fieldset class="font_eleven float_right field_set_style">
+                            <legend>. Label information .</legend>
+                            <div class="label_information_type full_width">
+                                <span class="label_type">Type:</span>
+                                <span id="label_info_type">1/2 Letter Postcard</span>
+                            </div>
+                            <div class="height_label_legend full_width">
+                                <span class="label_height">Height:</span>
+                                <span id="label_info_height">8.5"</span>
+                            </div>
+                            <div class="width_label_legend full_width">
+                                <span class="label_width">Width:</span>
+                                <span id="label_info_width">5.5"</span>
+                            </div>
+                            <div class="page full_width">
+                                <span class="label_page">Page size:</span>
+                                <span id="label_info_size">5.5" X 8.5"</span>
+                            </div>
+                        </fieldset>
+                    </div>
+                        <!-- End of product and labels container  -->
+                    <div class="footer_button height_twentytwo full_width float_left">
+                        <div class="button_details button_same float_left width_sixteen height_twentytwo">
+                            <button type="button" name="details_btn" id="details_btn" accesskey="d" class="button_color height_twentytwo"><u>D</u>etails...</button>    
+                        </div>
+                        <div class="button_new_label button_same float_left width_sixteen height_twentytwo">
+                            <button type="button" name="label_btn" id="label_btn" accesskey="n" class="button_color height_twentytwo"><u>N</u>ew Label...</button>    
+                        </div> 
+                        <div class="button_delete width_sixteen float_left height_twentytwo" id="button_delete">
+                            <button type="button" name="delete_btn" id="delete_btn" disabled="disabled" class="button_color height_twentytwo">Delete</button>    
+                        </div>   
+                        <div class="button_ok float_left">
+                            <button type="button" name="ok_btn" id="ok_btn" class="float_right button_color height_twentytwo">OK</button>    
+                        </div>
+                        <div class="button_cancel width_sixteen float_right height_twentytwo">
+                            <button type="button" name="cancel_btn" id="cancel_btn" class="button_color height_twentytwo">Cancel</button>    
+                        </div>
+                    </div> 
+                </div>
+            </form>
+        </div>
+        <div class="detail_dialog hide_dialog" id="detail_dialog_container" title="1/2 Letter Postcard 1/2 Letter information">
+            <img src="img/new_label_dialog.jpg" alt="new_label_dialog.jpg"/>
+        </div>
+        <div class="hide_dialog" id="new_label_dialog_container" title="Label Details">
+            <img src="img/new_label_dialog.jpg" alt="new_label_dialog.jpg"/>
+        </div>
+        <div class="question_container hide_dialog" id="question_container" title="Word Help">
+            <img src="img/question_mark.jpg" alt="question_mark.jpg"/>
+        </div>
+        <div class="delete_dialog hide_dialog" id="delete_dialog" title="Microsoft Office Word">
+            <img src="img/delete_dialog_img.jpg" alt="delete_dialog_img.jpg"/>
+        </div>
+    </body>    
+</html> 

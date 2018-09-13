@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit Category</title>
+        <link rel="stylesheet" href="css_screen_3.css"/>
+        <link rel="stylesheet" href="css_screen_dialog3.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="css_dialog_box1.js"></script>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div class="container" id="main_container">
+            <div class="top_bar width_full">
+                <div class="header_edit_category color_white float_left">Edit Category</div>
+                <a href="#" id="question_mark">
+                    <div class="question_mark float_left height_full"></div>
+                </a>
+                <a href="#" id="close_button_header">
+                    <div class="close height_full"></div> 
+                </a>                
+            </div> 
+            <!-- End of header -->
+            <form role="form" id="category_form">
+                <div class="main_body_part">
+                    <div class="category_selection_upper float_left width_full">
+                        <label for="label_categories" accesskey="c"><u>C</u>ategory:</label>
+                    </div>
+                    <div class="category_selection_lower float_left width_full">
+                        <select id="label_categories" multiple="multiple" size="8" name="label_categories" class="category_select">
+                            <option value="1" class="active">Cases</option>
+                            <option value="2">Statutes</option>
+                            <option value="3">Other Authorities</option>
+                            <option value="4">Rules</option>
+                            <option value="5">Treatises</option>
+                            <option value="6">Regulations</option>
+                            <option value="7">Constitutional Provisions</option>
+                            <option value="8">8</option>
+                            <option value="9">Cases</option>
+                            <option value="10">Statutes</option>
+                            <option value="11">Other Authorities</option>
+                            <option value="12">Rules</option>
+                        </select>
+                    </div>
+                    <!-- End of Selection part-->
+                    <div class="replace_with float_left width_full">
+                        <label for="label_replace" accesskey="w">Replace <u>w</u>ith:</label>
+                    </div>
+                    <div class="replace_with_input float_left width_full">
+                        <input type="text" name="replace_text" id="replace_text" placeholder="cases"/>
+                    </div>
+                    <div class="button_footer float_left width_full">
+                        <div class="button_replace float_left height_full">
+                            <button type="button" name="replace_button" class="height_full button_color_gradient" id="replace_button" accesskey="r"><u>R</u>eplace</button> 
+                        </div>
+                        <div class="ok_button float_left height_full">
+                            <button type="button" name="ok_btn" id="ok_btn" class="height_full button_color_gradient" autofocus="autofocus">OK</button>
+                        </div>
+                        <div class="cancel_button float_left height_full">
+                            <button type="button" name="cancel_btn" class="height_full button_color_gradient" id="cancel_btn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="question_container" id="question_container">
+            <div class="header_dialog_box">
+                <div class="header_text">Word Help</div>
+                <a href="#">
+                    <div class="close_dialog" id="close_dialog"></div>
+                </a>
+            </div>
+            <img src="img/question_mark.jpg" alt="question_mark.jpg"/>
+        </div>
+    </body>
+</html>

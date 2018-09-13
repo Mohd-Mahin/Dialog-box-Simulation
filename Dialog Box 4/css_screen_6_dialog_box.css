@@ -1,0 +1,82 @@
+.product_number_select_page_printer,
+.label_vendor_select_continuous_feed {
+  display: none;
+}
+
+.detail_dialog_container {
+  width: 28.25%;
+  height: 436px;
+  bottom: 300px;
+  left: 450px;
+  border: 1px solid blue;
+}
+
+.detail_dialog_container,
+.pos_relative {
+  position: relative;
+  visibility: hidden;
+}
+
+.header_text {
+  width: 92.02%;
+  padding: 4px 0 0 4.5px;
+}
+
+.dialog_close {
+  width: 5.4%;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.question_dialog_container {
+  left: 490px;
+  width: 412px;
+  border: 1px solid #A4C3EB;
+  height: 559px;
+  bottom: 1150px;
+}
+
+.detail_dialog_container,
+.question_dialog_container,
+.organizer_header {
+  background: white;
+}
+
+.question_dialog_header {
+  width: 100%;
+  height: 20.8px;
+}
+
+.question_header_text {
+  width: 92%;
+  padding: 2px 0 0 6px;
+}
+
+.header_text,
+.question_header_text {
+  float: left;
+}
+
+.question_close_button {
+  width: 7%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  height: 21px;
+  background: url("img/close.png") no-repeat center;
+}
+
+.dialog_close,
+.question_close_button {
+  float: right;
+}
+
+
+
+
+
+
+
+.custom_select_option {
+  display: none;
+}

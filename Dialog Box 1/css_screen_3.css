@@ -1,0 +1,211 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Letter Gothic;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 30px;
+  max-width: 290px;
+  height: 243px;
+  background: #ECE9D8;
+  border-left: 3px ridge #0856dd;
+  border-right: 3px  ridge #00138C;
+  border-bottom: 3px  ridge #00138C;
+  -webkit-border-radius: 8px 8px 0 0;
+  -moz-border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
+  border-top: 2px solid #0059E8;    
+}
+
+.container,
+.header_close_button {
+  overflow: hidden;
+}
+
+.top_bar {
+  height: 27px;
+  border-bottom: 1px solid #00138C;
+  background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, #3D94FF),
+	color-stop(0.11, #45AEFF),
+	color-stop(0.47, #005FF9),
+	color-stop(1, #2B91FF),
+	color-stop(1, #45AEFF),
+	color-stop(1, #0366F1),
+	color-stop(1, #005DE9),
+	color-stop(1, #0058E6),
+	color-stop(1, #0053E1),
+	color-stop(1, #0054E5),
+	color-stop(1, #0050E5),
+	color-stop(1, #0056EA),
+	color-stop(1, #005FF9),
+	color-stop(1, #0065FD),
+	color-stop(1, #026BFE),
+	color-stop(1, #026BFE)
+  );
+  background-image: -webkit-linear-gradient(top, #3D94FF 0%, #45AEFF 11%, #005FF9 47%, #2B91FF 100%, 
+  #45AEFF 100%, #0366F1 100%, #005DE9 100%, #0058E6 100%, #0053E1 100%, #0054E5 100%, #0050E5 100%, 
+  #0056EA 100%, #005FF9 100%, #0065FD 100%, #026BFE 100%, #026BFE 100%);
+  background-image: -moz-linear-gradient(top, #3D94FF 0%, #45AEFF 11%, #005FF9 47%, #2B91FF 100%, 
+  #45AEFF 100%, #0366F1 100%, #005DE9 100%, #0058E6 100%, #0053E1 100%, #0054E5 100%, #0050E5 100%, 
+  #0056EA 100%, #005FF9 100%, #0065FD 100%, #026BFE 100%, #026BFE 100%);
+  background-image: linear-gradient(to top, #3D94FF 0%, #45AEFF 11%,
+  #005FF9 47%, #2B91FF 100%, #45AEFF 100%, #0366F1 100%, #005DE9 100%, #0058E6 100%, #0053E1 100%, 
+  #0054E5 100%, #0050E5 100%, #0056EA 100%, #005FF9 100%, #0065FD 100%, #026BFE 100%, #026BFE 100%);
+}
+
+.header_edit_category,
+.active {
+  color: #ffffff;
+}
+
+.header_edit_category,
+.category_selection_lower,
+.replace_with {
+  font-size: 13px;
+}
+
+.category_selection_upper {
+  margin: 5px 0 0 6px;
+  font-size: 12.5px;
+}
+
+.header_edit_category {
+  margin: 7px 0 0 5px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #0A1883;
+  height: auto;
+  width: 82%;
+  white-space: nowrap;
+}
+
+.question_mark {
+  background: url(img/question.png) no-repeat;
+}
+
+.question_mark,
+.close {
+  margin-top: 3px;
+  width: 8%;
+} 
+
+.close {
+  float: right;
+  background: url(img/close.png) no-repeat;
+}
+
+input[type='text'] {
+  width: 95.911%;
+  padding-left: 9px;
+}
+
+.category_selection_lower select {
+  height: 108px;
+  width: 95.9%;
+  padding: 1px;
+  background: #ffffff url(img/scroll_bar.png) no-repeat right;
+  overflow-y: hidden;
+}
+
+.category_selection_lower select,
+.replace_with_input input[type] {
+  border: 1px solid #7F9DB9;
+}
+
+.category_selection_lower  option {
+  font-size: 11.4px; 
+  padding-left: 2px;
+}
+
+.header_edit_category,
+.category_selection_lower  option {
+  font-family: sans-serif;
+}
+
+.replace_with {
+  margin: 4px 0 0 6px;
+  font-size: 11.7px;
+}
+
+.replace_with_input input[type] {
+  font-size: 11.6px;
+  padding: 2px 0 1px 3px;
+}
+
+.button_footer {
+  clear: both;
+  margin: 11px 0 0 6px;
+  height: 22px;
+}
+
+.button_replace {
+  width: 39.3%;
+}
+
+.button_replace button {
+  width: 67%;
+}
+
+.ok_button button,
+.cancel_button button {
+  width: 91%;
+}
+
+.button_color_gradient {
+  background-image: -webkit-gradient(
+  linear,
+  left top,
+  left bottom,
+  color-stop(0, #FFFFFF),
+  color-stop(1, #D6D0C5),
+  color-stop(1, #D6D0C5)
+  );
+  background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #D6D0C5 100%, #D6D0C5 100%);
+  background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #D6D0C5 100%, #D6D0C5 100%);
+  background-image: linear-gradient(to bottom, #FFFFFF 0%, #D6D0C5 100%, #D6D0C5 100%);
+  border: 1px solid #003C74;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 11.5px;
+}
+
+.cancel_button button {
+  margin-left: 4px;
+}
+
+.ok_button,
+.cancel_button {
+  width: 28.9%;
+}
+
+.active {
+  background-color: #316AC5;    
+}
+
+.active,
+.category_select option {
+  width: 94%;    
+}
+
+.float_left {
+  float: left;
+}
+
+.height_full {
+  height: 100%;
+}
+
+.category_selection_lower,
+.replace_with_input {
+  margin: 1px 0 0 6px;
+}
+
+.width_full {
+  width: 100%;
+}
